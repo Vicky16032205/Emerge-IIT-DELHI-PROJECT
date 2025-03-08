@@ -1,0 +1,6 @@
+[
+    {
+        "NL": "Find the average time spent on the website by users who clicked on a push notification and completed a survey.",
+        "Query": "```sql\nSELECT AVG(T2.time_spent) \nFROM user_actions T1 \nJOIN user_sessions T2 ON T1.user_id = T2.user_id \nWHERE T1.action = 'click' AND T1.target = 'push_notification' \nAND T2.survey_completed = 1 \nLIMIT 10\n```"
+    }
+]
